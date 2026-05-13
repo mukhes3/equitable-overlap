@@ -1,0 +1,51 @@
+{
+  "team_name": "global-exec-demo",
+  "weeks": 3,
+  "days_per_week": 5,
+  "target_workday_span_hours": 8,
+  "recommendation": {
+    "max_served_fraction_drop_vs_timing_fair": 0.01
+  },
+  "members": [
+    {
+      "name": "Seattle",
+      "timezone": -8,
+      "fragmentation_weight": 1.0,
+      "protected_windows": [
+        {"start_local": 12, "duration_hours": 2}
+      ]
+    },
+    {
+      "name": "New York",
+      "timezone": -5,
+      "fragmentation_weight": 1.0,
+      "protected_windows": [
+        {"start_local": 12, "duration_hours": 2}
+      ]
+    },
+    {
+      "name": "London",
+      "timezone": 0,
+      "fragmentation_weight": 1.0,
+      "protected_windows": [
+        {"start_local": 12, "duration_hours": 2}
+      ]
+    },
+    {
+      "name": "Singapore",
+      "timezone": 8,
+      "fragmentation_weight": 1.1,
+      "protected_windows": [
+        {"start_local": 12, "duration_hours": 2}
+      ]
+    }
+  ],
+  "collaboration_edges": [
+    {"members": ["Seattle", "New York"], "weekly_demand": 5},
+    {"members": ["Seattle", "London"], "weekly_demand": 4},
+    {"members": ["Seattle", "Singapore"], "weekly_demand": 2},
+    {"members": ["New York", "London"], "weekly_demand": 5},
+    {"members": ["New York", "Singapore"], "weekly_demand": 2},
+    {"members": ["London", "Singapore"], "weekly_demand": 4}
+  ]
+}
